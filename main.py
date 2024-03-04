@@ -12,8 +12,15 @@ def caesarcrypter(word, shift):
     ModifiedWord = list(word)
     counter = 0
     shift = int(shift)
+
     for i in word:
-        ModifiedWord[counter] = alphabet[(alphabet.find(i)) + shift]
+
+        if((alphabet.find(i) + shift) > 25):
+            ActualShift = ((alphabet.find(i) + shift) - 26)
+        else:
+            ActualShift = alphabet.find(i) + shift
+
+        ModifiedWord[counter] = alphabet[ActualShift]
         counter += 1
 
     EncryptedWord = "".join(ModifiedWord)
