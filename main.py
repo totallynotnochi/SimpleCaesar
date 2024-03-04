@@ -16,7 +16,7 @@ def caesarcrypter(word, shift):
     for i in word:
 
         if((alphabet.find(i) + shift) > 25):
-            ActualShift = ((alphabet.find(i) + shift) - 26)
+            ActualShift = (alphabet.find(i) + shift) - (int((alphabet.find(i) + shift)%26)*26)
         else:
             ActualShift = alphabet.find(i) + shift
 
